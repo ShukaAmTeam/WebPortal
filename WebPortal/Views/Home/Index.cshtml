@@ -45,7 +45,9 @@
                     <li class="placeholder">
                         <a data-type={{selectedFilter.dataType}} href="#0">{{selectedFilter.filter}}</a> <!-- selected option on mobile -->
                     </li>
-                    <li class="filter" ng-repeat="x in models.filters" ng-click="changeFilter(x)"><a class="selected" href="#0" data-type={{x.dataType}}>{{x.filter}}</a></li>
+                    <li class="filter" ng-repeat="x in models.filters" ng-click="changeFilter(x)" data-filter={{x.dataFilter}}>
+                        <a href="#0" data-type={{x.dataType}}>{{x.filter}}</a>
+                    </li>
                 </ul> <!-- cd-filters -->
 
                 @*<ul class="cd-filters">
