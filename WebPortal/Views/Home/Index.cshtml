@@ -34,18 +34,18 @@
 
     <title>Content Filters | CodyHouse</title>
 </head>
-<body>
+<body ng-app="App">
     <header class="cd-header">
         <h1>Content Filters</h1>
     </header>
     <main class="cd-main-content">
-        <div class="cd-tab-filter-wrapper" ng-app="App" ng-controller="CdFiltersController">
+        <div class="cd-tab-filter-wrapper" ng-controller="CdFiltersController">
             <div class="cd-tab-filter">
                 <ul class="cd-filters">
                     <li class="placeholder">
-                        <a data-type="all" href="#0">{{selectedFilter.filter}}</a> <!-- selected option on mobile -->
+                        <a data-type={{selectedFilter.dataType}} href="#0">{{selectedFilter.filter}}</a> <!-- selected option on mobile -->
                     </li>
-                    <li class="filter" ng-repeat="x in models.filters" ng-click="changeFilter(x)"><a class="selected" href="#0" data-type="all">{{x.filter}}</a></li>
+                    <li class="filter" ng-repeat="x in models.filters" ng-click="changeFilter(x)"><a class="selected" href="#0" data-type={{x.dataType}}>{{x.filter}}</a></li>
                 </ul> <!-- cd-filters -->
 
                 @*<ul class="cd-filters">
@@ -145,6 +145,6 @@
     <script src="~/js/jquery-2.1.1.js"></script>
     <script src="~/js/jquery.mixitup.min.js"></script>
     <script src="~/js/main.js"></script> <!-- Resource jQuery -->
-</body>
+</bodyng-app="App">
 </html>
 <!doctype html>
