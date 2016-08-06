@@ -30,6 +30,7 @@
     <script src="~/SPA/Controller/GridController.js"></script>
     <script src="~/SPA/Controller/MainController.js"></script>
     <script src="~/SPA/Controller/CdFiltersController.js"></script>
+    <script src="~/SPA/Controller/ChBFiltersController.js"></script>
     <script src="~/SPA/App.js"></script>
 
     <title>Content Filters | CodyHouse</title>
@@ -46,7 +47,8 @@
                         <a data-type={{selectedFilter.dataType}} href="#0">{{selectedFilter.filter}}</a> <!-- selected option on mobile -->
                     </li>
                     <li class="filter" ng-repeat="x in models.filters" ng-click="changeFilter(x)" data-filter={{x.dataFilter}}>
-                        <a href="#0" data-type={{x.dataType}}>{{x.filter}}</a>
+                        <a href="#0" data-type={{x.dataType}}>{{x.filter}}</a> 
+                        <!-- !!!!!!!!! Add class="selected" for first itom !!!!!!!!!!  -->
                     </li>
                 </ul> <!-- cd-filters -->
 
@@ -90,20 +92,12 @@
                         <input type="search" placeholder="Try color-1...">
                     </div> <!-- cd-filter-content -->
                 </div> <!-- cd-filter-block -->
-                <div class="cd-filter-block">
+                <div class="cd-filter-block" ng-controller="ChBFiltersController">
                     <h4>Check boxes</h4>
                     <ul class="cd-filter-content cd-filters list">
-                        <li>
-                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                            <label class="checkbox-label" for="checkbox1">Option 1</label>
-                        </li>
-                        <li>
-                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                            <label class="checkbox-label" for="checkbox2">Option 2</label>
-                        </li>
-                        <li>
-                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                            <label class="checkbox-label" for="checkbox3">Option 3</label>
+                        <li ng-repeat="x in models.filters" ng-click="changeFilter(x)">
+                            <input class="filter" data-filter={{x.dataFilter}} type="checkbox" id="checkbox{{x.id}}">
+                            <label class="checkbox-label" for="checkbox{{x.id}}">{{x.filter}}</label>
                         </li>
                     </ul> <!-- cd-filter-content -->
                 </div> <!-- cd-filter-block -->
@@ -147,6 +141,6 @@
     <script src="~/js/jquery-2.1.1.js"></script>
     <script src="~/js/jquery.mixitup.min.js"></script>
     <script src="~/js/main.js"></script> <!-- Resource jQuery -->
-</bodyng-app="App">
+</body>
 </html>
 <!doctype html>
