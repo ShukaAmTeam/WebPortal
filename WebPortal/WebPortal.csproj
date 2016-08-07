@@ -136,6 +136,7 @@
     <Content Include="SPA\Controller\CdFiltersController.js" />
     <Content Include="SPA\Controller\GridController.js" />
     <Content Include="SPA\Controller\MainController.js" />
+    <Content Include="SPA\Controller\ProductController.js" />
     <Content Include="SPA\Controller\ViewProductController.js" />
     <Content Include="SPA\Views\Grid.html" />
     <Content Include="SPA\Views\ViewProductWindow.html" />
