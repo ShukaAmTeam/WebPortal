@@ -134,6 +134,7 @@
     <Content Include="Scripts\ui-bootstrap-tpls-1.1.2.min.js" />
     <Content Include="SPA\App.js" />
     <Content Include="SPA\Controller\CdFiltersController.js" />
+    <Content Include="SPA\Controller\ChBFiltersController.js" />
     <Content Include="SPA\Controller\GridController.js" />
     <Content Include="SPA\Controller\MainController.js" />
     <Content Include="SPA\Controller\ProductController.js" />

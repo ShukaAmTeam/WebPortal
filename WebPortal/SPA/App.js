@@ -1,6 +1,7 @@
 ﻿var App = angular.module('App', ['ngRoute', 'ui.bootstrap', 'chart.js']);
 
 App.controller('CdFiltersController', CdFiltersController);
+App.controller('ChBFiltersController', ChBFiltersController);
 App.controller('MainController', MainController);
 App.controller('GridController', GridController);
 App.controller('ViewProductController', ViewProductController);
