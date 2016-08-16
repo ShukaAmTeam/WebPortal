@@ -31,6 +31,7 @@
     <script src="~/SPA/Controller/MainController.js"></script>
     <script src="~/SPA/Controller/CdFiltersController.js"></script>
     <script src="~/SPA/Controller/ChBFiltersController.js"></script>
+    <script src="~/SPA/Controller/CdGalleryController.js"></script>
     <script src="~/SPA/App.js"></script>
 
     <title>Content Filters | CodyHouse</title>
@@ -63,11 +64,14 @@
 
             </div> <!-- cd-tab-filter -->
         </div> <!-- cd-tab-filter-wrapper -->
-        <section class="cd-gallery">
+        <section class="cd-gallery" ng-controller="CdGalleryController">
             <ul>
-                <li class="mix color-1 check1 radio2 option3"><img src="~/img/img-1.jpg" alt="Image 1"></li>
-                <li class="mix color-2 check2 radio2 option2"><img src="~/img/img-2.jpg" alt="Image 2"></li>
-                <li class="mix color-1 check3 radio3 option1"><img src="~/img/img-3.jpg" alt="Image 3"></li>
+                <li ng-repeat="x in models.products"
+                    class="mix {{x.color}} {{x.check}} {{x.radio}} {{x.option}}"><img src="~/img/{{x.img}}" alt="{{x.alt}}"/></li>
+
+                @*<li class="mix color-1 check1 radio2 option3"><img src="~/img/img-1.jpg" alt="Image 1"></li>
+                <li class="mix color-2 check2 radio2 option2"><img src="~/img/img-2.jpg" alt="Image 2"></li>*@
+                @*<li class="mix color-1 check3 radio3 option1"><img src="~/img/img-3.jpg" alt="Image 3"></li>
                 <li class="mix color-1 check3 radio2 option4"><img src="~/img/img-4.jpg" alt="Image 4"></li>
                 <li class="mix color-1 check1 radio3 option2"><img src="~/img/img-5.jpg" alt="Image 5"></li>
                 <li class="mix color-2 check2 radio3 option3"><img src="~/img/img-6.jpg" alt="Image 6"></li>
@@ -76,7 +80,7 @@
                 <li class="mix color-2 check1 radio2 option3"><img src="~/img/img-9.jpg" alt="Image 9"></li>
                 <li class="mix color-1 check3 radio2 option4"><img src="~/img/img-10.jpg" alt="Image 10"></li>
                 <li class="mix color-1 check3 radio3 option2"><img src="~/img/img-11.jpg" alt="Image 11"></li>
-                <li class="mix color-2 check1 radio3 option1"><img src="~/img/img-12.jpg" alt="Image 12"></li>
+                <li class="mix color-2 check1 radio3 option1"><img src="~/img/img-12.jpg" alt="Image 12"></li>*@
                 <li class="gap"></li>
                 <li class="gap"></li>
                 <li class="gap"></li>
