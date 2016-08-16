@@ -6,6 +6,7 @@ App.controller('ChBFiltersController', ChBFiltersController);
 App.controller('MainController', MainController);
 App.controller('GridController', GridController);
 App.controller('ViewProductController', ViewProductController);
+App.controller('ProductController', ProductController);
 
 var configFunction = function ($routeProvider, $httpProvider) {
     $routeProvider.
