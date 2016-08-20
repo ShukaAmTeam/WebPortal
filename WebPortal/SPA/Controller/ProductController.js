@@ -22,7 +22,7 @@ function getProductsXHR() {
         async: false,
         type: 'GET',
         url: 'http://localhost:6315/Home/GetProducts',
-        data: "pageIndex=1&pageSize=20",
+        data: "pageIndex=1&pageSize=12",
         dataType: 'json',
         success: function (result) {
             console.log("success:   " + result);
