@@ -140,6 +140,7 @@
     <Content Include="SPA\Controller\MainController.js" />
     <Content Include="SPA\Controller\ProductController.js" />
     <Content Include="SPA\Controller\ViewProductController.js" />
+    <Content Include="SPA\Views\c2fb5re7.bmp" />
     <Content Include="SPA\Views\Grid.html" />
     <Content Include="SPA\Views\ViewProductWindow.html" />
     <Content Include="Web.config" />

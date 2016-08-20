@@ -29,12 +29,33 @@ namespace WebPortal.Controllers
                     CostPrice = i * 10,
                     Price = i * 5,
                     MeasUnits = new MeasUnitEntity { MeasUnit_Guid = Guid.NewGuid(), Name = "", ShortName = "" },
-                    ProductTypes = new ProductTypeEntity { Name = "", Description = "" }
+                    ProductTypes = new ProductTypeEntity
+                    {
+                        Id = i,
+                        Name = $"Type {i}",
+                        DataFilter = $"type{i}",
+                        Description = $"Type {i} description"
+                    }
                 });
             }
             return Json(prods, JsonRequestBehavior.AllowGet);
         }
+        public JsonResult GetProductTypes(int pageIndex = 1, int pageSize = 5)
+        {
+            var prodTypes = new List<ProductTypeEntity>();
 
+            for (int i = pageIndex; i <= pageIndex * pageSize; i++)
+            {
+                prodTypes.Add(new ProductTypeEntity
+                {
+                    Id = i,
+                    Name = $"Type {i}",
+                    DataFilter = $"type{i}",
+                    Description = $"Type {i} description"
+                });
+            }
+            return Json(prodTypes, JsonRequestBehavior.AllowGet);
+        }
     }
 
     public class ProductEntity
@@ -57,7 +78,9 @@ namespace WebPortal.Controllers
 
     public partial class ProductTypeEntity
     {
+        public int Id { get; set; }
         public string Name { get; set; }
+        public string DataFilter { get; set; }
         public string Description { get; set; }
     }
 }

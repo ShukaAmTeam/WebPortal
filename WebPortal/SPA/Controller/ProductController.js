@@ -16,7 +16,8 @@
 
 
 function getProductsXHR() {
-    var products = [{ Id: "1", Name: "Product 1", Description: "Description 1", CostPrice: 15, Price: 12, dataFilter: "" }];
+    var productType = { Name: "Product Type 1", DataFilter: "type1", Description: "Type 1 Description" };
+    var products = [{ Id: "1", Name: "Product 1", Description: "Description 1", CostPrice: 15, Price: 12, dataFilter: "", ProductTypes: productType }];
     $.ajax({
         async: false,
         type: 'GET',
