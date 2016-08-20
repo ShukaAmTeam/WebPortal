@@ -29,6 +29,13 @@ namespace WebPortal.Controllers
                     CostPrice = i * 10,
                     Price = i * 5,
                     MeasUnits = new MeasUnitEntity { MeasUnit_Guid = Guid.NewGuid(), Name = "", ShortName = "" },
+                    ImageUrls = new List<string>
+                    {
+                        $"/img/img-{i}.jpg",
+                        $"/img/item-1.jpg",
+                        $"/img/item-2.jpg",
+                        $"/img/item-3.jpg"
+                    },
                     ProductTypes = new ProductTypeEntity
                     {
                         Id = i,
@@ -67,6 +74,7 @@ namespace WebPortal.Controllers
         public int? Price { get; set; }
         public MeasUnitEntity MeasUnits { get; set; }
         public ProductTypeEntity ProductTypes { get; set; }
+        public List<string> ImageUrls { get; set; }
     }
 
     public class MeasUnitEntity

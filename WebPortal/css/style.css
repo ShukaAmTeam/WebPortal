@@ -340,14 +340,15 @@ header h1 {
   -webkit-transition: opacity 0.2s, background 0.2s;
   -moz-transition: opacity 0.2s, background 0.2s;
   transition: opacity 0.2s, background 0.2s;
-}
+  /*background-color:rebeccapurple;*/
+}   
 .cd-slider-navigation li a::before, .cd-slider-navigation li a::after {
   /* create arrows in CSS */
   position: absolute;
   top: 18px;
   left: 14px;
   display: inline-block;
-  background: #ffffff;
+  background: #67919c;
   height: 3px;
   width: 12px;
 }
