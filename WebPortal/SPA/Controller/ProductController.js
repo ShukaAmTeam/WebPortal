@@ -8,16 +8,17 @@
         //                { Id: "3", Name: "Product 3", Description: "Description 3", CostPrice: 15, Price: 12, dataFilter: ".color-2" }
         //]
     };
+    $scope.Name = function () { return "fsdfs" };
     $scope.loopLoaded = function () {
         reloadStylesheets();
         //$scope.$broadcast('rebuild:me');
     }
 };
 
-
+Products = [];
 function getProductsXHR() {
     var productType = { Name: "Product Type 1", DataFilter: "type1", Description: "Type 1 Description" };
-    var products = [{ Id: "1", Name: "Product 1", Description: "Description 1", CostPrice: 15, Price: 12, dataFilter: "", ProductTypes: productType }];
+    var products = [{ Id: "1", Name: "Product 1", Description: "Description 1", CostPrice: 15, Price: 12, ImageUrls: ["/img/item-1.jpg"], dataFilter: "", ProductTypes: productType }];
     $.ajax({
         async: false,
         type: 'GET',
@@ -27,6 +28,7 @@ function getProductsXHR() {
         success: function (result) {
             console.log("success:   " + result);
             products = result;
+            Products = products;
         },
         //success: function (result, status, xhr) {
         //    console.log("success:   " + result);
