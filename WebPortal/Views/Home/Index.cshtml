@@ -60,7 +60,7 @@
             <ul class="cd-items cd-container">
                 <li ng-repeat="x in models.products" ng-cloak
                     class="cd-item mix color-1 {{x.ProductTypes.DataFilter}} radio2 option3">
-                    <img src="~/img/img-{{x.Id}}.jpg" alt="Image 1" />
+                    <img src="~/img/img-{{x.Id}}.jpg" alt="Image 1" title="{{x.Name}}"/>
                     @*<img src="~/img/item-1.jpg" alt="Item Preview">*@
                     <a href="#0" class="cd-trigger">Quick View</a>
                     @*<p>{{x.Name}}</p>
