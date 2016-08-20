@@ -1,10 +1,6 @@
 ﻿var ChBFiltersController = function ($scope) {
     $scope.models = {
-        filters: getProductTypesXHR() // [
-        //                { id: "1", filter: "Type 1", dataFilter: ".type1" },
-        //                { id: "2", filter: "Type 2", dataFilter: ".type2" },
-        //                { id: "3", filter: "Type 3", dataFilter: ".type3" }
-        //]
+        filters: getProductTypesXHR()
     };
     $scope.selectedFilter = $scope.models.filters[0];
 
@@ -13,14 +9,13 @@
     }
 };
 
-
 function getProductTypesXHR() {
     var productTypes = [{ Id: "1", Name: "Type 1", DataFilter: "type1", Description: "Type 1 Description" }];
     $.ajax({
         async: false,
         type: 'GET',
         url: 'http://localhost:6315/Home/GetProductTypes',
-        data: "pageIndex=1&pageSize=5",
+        data: "pageIndex=1&pageSize=12",
         dataType: 'json',
         success: function (result) {
             console.log("success:   " + result);
@@ -38,7 +33,6 @@ function getProductTypesXHR() {
         }
     });
     return productTypes;
-}
-
+};
 
 ChBFiltersController.$inject = ['$scope'];
