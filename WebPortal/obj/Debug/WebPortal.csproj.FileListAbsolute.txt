@@ -36,6 +36,6 @@ D:\Work\WebPortal\WebPortal\bin\Newtonsoft.Json.xml
 D:\Work\WebPortal\WebPortal\bin\System.Net.Http.Formatting.xml
 D:\Work\WebPortal\WebPortal\bin\System.Web.Http.xml
 D:\Work\WebPortal\WebPortal\bin\System.Web.Http.WebHost.xml
-D:\Work\WebPortal\WebPortal\obj\Debug\WebPortal.csprojResolveAssemblyReference.cache
 D:\Work\WebPortal\WebPortal\obj\Debug\WebPortal.dll
 D:\Work\WebPortal\WebPortal\obj\Debug\WebPortal.pdb
+D:\Work\WebPortal\WebPortal\obj\Debug\WebPortal.csprojResolveAssemblyReference.cache
