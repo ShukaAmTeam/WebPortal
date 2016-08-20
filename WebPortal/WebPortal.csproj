@@ -123,11 +123,15 @@
     <Content Include="img\img-7.jpg" />
     <Content Include="img\img-8.jpg" />
     <Content Include="img\img-9.jpg" />
+    <Content Include="img\item-1.jpg" />
+    <Content Include="img\item-2.jpg" />
+    <Content Include="img\item-3.jpg" />
     <Content Include="index.html" />
     <Content Include="js\jquery-2.1.1.js" />
     <Content Include="js\jquery.mixitup.min.js" />
     <Content Include="js\main.js" />
     <Content Include="js\modernizr.js" />
+    <Content Include="js\velocity.min.js" />
     <Content Include="Scripts\angular-chart.min.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Chart.min.js" />
@@ -162,6 +166,10 @@
     <Content Include="js\mixitup-LICENSE.md" />
     <Content Include="scss\style.scss" />
     <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="js\velocity-LICENSE.md" />
+    <Content Include="partials\_layout.scss" />
+    <Content Include="partials\_mixins.scss" />
+    <Content Include="partials\_variables.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
