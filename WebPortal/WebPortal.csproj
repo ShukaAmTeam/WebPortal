@@ -110,7 +110,13 @@
     <Content Include="Global.asax" />
     <Content Include="img\cd-icon-arrow.svg" />
     <Content Include="img\cd-icon-check.svg" />
+    <Content Include="img\cd-icon-close.svg" />
+    <Content Include="img\cd-icon-email.svg" />
     <Content Include="img\cd-icon-filter.svg" />
+    <Content Include="img\cd-icon-menu.svg" />
+    <Content Include="img\cd-icon-password.svg" />
+    <Content Include="img\cd-icon-username.svg" />
+    <Content Include="img\cd-logo.svg" />
     <Content Include="img\img-1.jpg" />
     <Content Include="img\img-10.jpg" />
     <Content Include="img\img-11.jpg" />
