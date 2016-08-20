@@ -1,3 +1,15 @@
+// rem fallback - credits: http://zerosixthree.se/
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
 // center vertically and/or horizontally an absolute positioned element
 
 @mixin center($xy:xy) {
@@ -18,4 +30,17 @@
     bottom: auto;
     @include transform(translateY(-50%));
   }
+}
+
+// border radius
+
+@mixin border-radius($radius:.25em) {
+  border-radius: $radius;
+}
+
+// antialiasing mode font rendering
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
