@@ -108,6 +108,7 @@
     <Content Include="css\reset.css" />
     <Content Include="css\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="img\cd-icon-arrow-next.svg" />
     <Content Include="img\cd-icon-arrow.svg" />
     <Content Include="img\cd-icon-check.svg" />
     <Content Include="img\cd-icon-close.svg" />
@@ -115,7 +116,9 @@
     <Content Include="img\cd-icon-filter.svg" />
     <Content Include="img\cd-icon-menu.svg" />
     <Content Include="img\cd-icon-password.svg" />
+    <Content Include="img\cd-icon-select.svg" />
     <Content Include="img\cd-icon-username.svg" />
+    <Content Include="img\cd-icons-cart-close.svg" />
     <Content Include="img\cd-logo.svg" />
     <Content Include="img\img-1.jpg" />
     <Content Include="img\img-10.jpg" />
@@ -132,6 +135,7 @@
     <Content Include="img\item-1.jpg" />
     <Content Include="img\item-2.jpg" />
     <Content Include="img\item-3.jpg" />
+    <Content Include="img\product-preview.png" />
     <Content Include="index.html" />
     <Content Include="js\jquery-2.1.1.js" />
     <Content Include="js\jquery.mixitup.min.js" />
