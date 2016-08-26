@@ -31,10 +31,10 @@ namespace WebPortal.Controllers
                     MeasUnits = new MeasUnitEntity { MeasUnit_Guid = Guid.NewGuid(), Name = "", ShortName = "" },
                     ImageUrls = new List<string>
                     {
-                        $"/img/img-{i}.jpg",
-                        $"/img/item-1.jpg",
-                        $"/img/item-2.jpg",
-                        $"/img/item-3.jpg"
+                        $"/img/content-filter/img-{i}.jpg",
+                        $"/img/product-quick-view/item-1.jpg",
+                        $"/img/product-quick-view/item-2.jpg",
+                        $"/img/product-quick-view/item-3.jpg"
                     },
                     ProductTypes = new ProductTypeEntity
                     {
