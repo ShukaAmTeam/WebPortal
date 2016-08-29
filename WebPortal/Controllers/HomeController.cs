@@ -24,8 +24,8 @@ namespace WebPortal.Controllers
                 prods.Add(new ProductEntity
                 {
                     Id = i,
-                    Name = "Product " + i,
-                    Description = "Product Description " + i,
+                    Name = $"Product {i} Title",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, omnis illo iste ratione. Numquam eveniet quo, ullam itaque expedita impedit. Eveniet, asperiores amet iste repellendus similique reiciendis, maxime laborum praesentium.",
                     CostPrice = i * 10,
                     Price = i * 5,
                     MeasUnits = new MeasUnitEntity { MeasUnit_Guid = Guid.NewGuid(), Name = "", ShortName = "" },
