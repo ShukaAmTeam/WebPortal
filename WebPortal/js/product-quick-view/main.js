@@ -94,7 +94,57 @@ jQuery(document).ready(function($){
 			quickViewWidth = ( windowWidth * .8 < maxQuickWidth ) ? windowWidth * .8 : maxQuickWidth ,
 			quickViewLeft = (windowWidth - quickViewWidth)/2;
 
-		if( animationType == 'open') {
+		if (animationType == 'open') {
+
+		    // custom //
+		    try {
+		        var productId = parentListItem.find('input[type=hidden]').val();
+
+		        var $popup = $('.cd-quick-view');
+		        var slider = $popup.find('.cd-slider');
+		        var itemInfo = $popup.find('.cd-item-info');
+
+		        var title = itemInfo.find('.title');
+		        var description = itemInfo.find('.description');
+		        var addToCartBtn = itemInfo.find('.cd-add-to-cart');
+
+		        var currProd = '';
+		        productId = parseInt(productId);
+		        if (Products != null) {
+		            for (var i = 0; i < Products.length; i++) {
+		                if (Products[i].Id == productId) {
+		                    currProd = Products[i];
+		                    break;
+		                }
+		            }
+		            title.text(currProd.Name);
+		            description.text(currProd.Description);
+		            addToCartBtn.data("product-id", productId);
+		            addToCartBtn.data("price", currProd.Price);
+
+		            //if first time bind pictures
+		            if ($(slider.children()[0]).find('img').length <= 1) {
+		                slider.empty();
+
+		                var altText = image.attr('alt');
+		                var currUrl = image.attr('src');
+		                var urls = currProd.ImageUrls;
+
+		                slider.append('<li class="selected"><img src="' + currUrl + '" alt="' + image.attr('alt') + '"></li>');
+
+		                for (var i = 0; i < urls.length; i++) {
+		                    if (urls[i] != currUrl)
+		                        slider.append('<li><img src="' + urls[i] + '" alt="' + altText + '"></li>');
+		                }
+		            }
+		        }
+		    }
+		    catch (ex) {
+		        console.log("exception: " + ex);
+		    }
+
+            // custom //
+
 			//hide the image in the gallery
 			parentListItem.addClass('empty-box');
 			//place the quick view over the image gallery and give it the dimension of the gallery image
