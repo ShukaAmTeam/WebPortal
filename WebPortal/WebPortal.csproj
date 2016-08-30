@@ -106,9 +106,11 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\reset.css" />
+    <Content Include="css\style-back-to-top.css" />
     <Content Include="css\style-content-filter.css" />
     <Content Include="css\style-product-quick-view.css" />
     <Content Include="Global.asax" />
+    <Content Include="img\back-to-top\cd-top-arrow.svg" />
     <Content Include="img\content-filter\cd-icon-arrow.svg" />
     <Content Include="img\content-filter\cd-icon-check.svg" />
     <Content Include="img\content-filter\cd-icon-filter.svg" />
@@ -128,6 +130,8 @@
     <Content Include="img\product-quick-view\item-2.jpg" />
     <Content Include="img\product-quick-view\item-3.jpg" />
     <Content Include="index.html" />
+    <Content Include="js\back-to-top\main.js" />
+    <Content Include="js\back-to-top\modernizr.js" />
     <Content Include="js\content-filter\jquery-2.1.1.js" />
     <Content Include="js\content-filter\jquery.mixitup.min.js" />
     <Content Include="js\content-filter\main.js" />
@@ -178,6 +182,11 @@
     <Content Include="partials\product-quick-view\_variables.scss" />
     <Content Include="scss\content-filter\style.scss" />
     <Content Include="scss\product-quick-view\style.scss" />
+    <Content Include="js\back-to-top\.DS_Store" />
+    <Content Include="partials\back-to-top\_layout.scss" />
+    <Content Include="partials\back-to-top\_mixins.scss" />
+    <Content Include="partials\back-to-top\_variables.scss" />
+    <Content Include="scss\back-to-top\style.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
