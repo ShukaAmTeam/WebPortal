@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -130,6 +131,14 @@
     <Content Include="img\product-quick-view\item-2.jpg" />
     <Content Include="img\product-quick-view\item-3.jpg" />
     <Content Include="index.html" />
+    <Content Include="js\angular-endless-scroll-master\.gitignore" />
+    <Content Include="js\angular-endless-scroll-master\dist\angular-endless-scroll.js" />
+    <Content Include="js\angular-endless-scroll-master\dist\angular-endless-scroll.min.js" />
+    <Content Include="js\angular-endless-scroll-master\Gruntfile.js" />
+    <Content Include="js\angular-endless-scroll-master\karma.conf.js" />
+    <Content Include="js\angular-endless-scroll-master\src\directive.js" />
+    <Content Include="js\angular-endless-scroll-master\src\module.js" />
+    <Content Include="js\angular-endless-scroll-master\test\directive.js" />
     <Content Include="js\back-to-top\main.js" />
     <Content Include="js\back-to-top\modernizr.js" />
     <Content Include="js\content-filter\jquery-2.1.1.js" />
@@ -148,6 +157,7 @@
     <Content Include="SPA\Controller\CdFiltersController.js" />
     <Content Include="SPA\Controller\CdGalleryController.js" />
     <Content Include="SPA\Controller\ChBFiltersController.js" />
+    <Content Include="SPA\Controller\EndlessScrollController.js" />
     <Content Include="SPA\Controller\GridController.js" />
     <Content Include="SPA\Controller\MainController.js" />
     <Content Include="SPA\Controller\ProductController.js" />
@@ -160,6 +170,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FakeProductsList.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -188,6 +199,11 @@
     <Content Include="partials\back-to-top\_mixins.scss" />
     <Content Include="partials\back-to-top\_variables.scss" />
     <Content Include="scss\back-to-top\style.scss" />
+    <Content Include="js\angular-endless-scroll-master\.jshintrc" />
+    <Content Include="js\angular-endless-scroll-master\bower.json" />
+    <Content Include="js\angular-endless-scroll-master\LICENSE" />
+    <Content Include="js\angular-endless-scroll-master\package.json" />
+    <Content Include="js\angular-endless-scroll-master\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -50,6 +50,11 @@
     <script src="~/js/back-to-top/main.js"></script> <!-- Main -->
     <script src="~/js/back-to-top/modernizr.js"></script> <!-- Modernizr -->
 
+
+    <script type="text/javascript" src="/path/to/jquery.min.js"></script>
+    <script type="text/javascript" src="/path/to/angular.min.js"></script>
+    <script type="text/javascript" src="~/js/angular-endless-scroll-master/dist/angular-endless-scroll.min.js"></script>
+
     @*<script>
             if (!window.jQuery) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
         </script>
@@ -180,6 +185,18 @@
 
         <a href="#0" class="cd-top">Top</a>
 
+
+
+        <ul class="list-group">
+            <li endless-scroll="item in items" class="list-group-item">
+                {{ item.name }}
+            </li>
+        </ul>
+
+        <p ng-show="loading" class="text-center">
+            Loading...
+        </p>
+       
     </main> <!-- cd-main-content -->
 
 </body>
