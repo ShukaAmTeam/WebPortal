@@ -14,7 +14,7 @@ function getProductTypesXHR() {
     $.ajax({
         async: false,
         type: 'GET',
-        url: 'http://localhost:6315/Home/GetProductTypes',
+        url: 'http://localhost:6315/api/Products/Types',
         data: "pageIndex=1&pageSize=12",
         dataType: 'json',
         success: function (result) {

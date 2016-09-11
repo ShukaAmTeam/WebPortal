@@ -2,7 +2,7 @@
     //$scope.selectedProduct = $scope.models[0];
 
     $scope.models = {
-        products: getProductsXHR()
+        products: getAllProductsXHR()
     };
     $scope.Name = function () { return "fsdfs" };
     $scope.loopLoaded = function () {
@@ -27,8 +27,36 @@ function getProductsXHR() {
     $.ajax({
         async: false,
         type: 'GET',
-        url: 'http://localhost:6315/Home/GetProducts',
-        data: "pageIndex=1&pageSize=12",
+        url: 'http://localhost:6315/api/Products',
+        data: "pageIndex=0&pageSize=12",
+        dataType: 'json',
+        success: function (result) {
+            console.log("success:   " + result);
+            products = result;
+            Products = products;
+        },
+        //success: function (result, status, xhr) {
+        //    console.log("success:   " + result);
+        //    return result;
+        //},
+        error: function (xhr, status, error) {
+            console.log("xhr:   " + xhr);
+            console.log("status:   " + status);
+            console.log("error:   " + error);
+            alert('Error! </br> see error details in console.');
+        }
+    });
+    return products;
+}
+
+function getAllProductsXHR() {
+    var productType = { Name: "Product Type 1", DataFilter: "type1", Description: "Type 1 Description" };
+    var products = [{ Id: 1, Name: "Product 1", Description: "Description 1", CostPrice: 15, Price: 12, ImageUrls: ["/img/content-filter/img-1.jpg"], dataFilter: "", ProductTypes: productType }];
+    $.ajax({
+        async: false,
+        type: 'GET',
+        url: 'http://localhost:6315/api/Products',
+        data: "",
         dataType: 'json',
         success: function (result) {
             console.log("success:   " + result);
