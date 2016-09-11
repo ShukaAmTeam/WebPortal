@@ -106,7 +106,7 @@ header h1 {
   }
 }
 
-.cd-items {
+/*.cd-items {
   padding: 1em 0;
 }
 @media only screen and (min-width: 768px) {
@@ -118,7 +118,7 @@ header h1 {
   .cd-items {
     padding: 4em 0 0;
   }
-}
+}*/
 
 .cd-item {
   position: relative;
@@ -130,7 +130,7 @@ header h1 {
 }
 @media only screen and (min-width: 768px) {
   .cd-item {
-    width: 48%;
+    width: 46%;
     float: left;
     margin: 0 4% 2em 0;
   }

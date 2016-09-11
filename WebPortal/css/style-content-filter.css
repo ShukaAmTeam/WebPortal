@@ -288,7 +288,7 @@ xgallery
     clear: both;
   }
   .cd-gallery li {
-    width: 48%;
+    /*width: 48%;*/
     margin-bottom: 2em;
   }
 }
