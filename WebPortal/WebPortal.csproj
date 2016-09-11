@@ -107,10 +107,15 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\reset.css" />
+    <Content Include="css\style-add-to-cart-interaction.css" />
     <Content Include="css\style-back-to-top.css" />
     <Content Include="css\style-content-filter.css" />
     <Content Include="css\style-product-quick-view.css" />
     <Content Include="Global.asax" />
+    <Content Include="img\add-to-cart-interaction\cd-icon-arrow-next.svg" />
+    <Content Include="img\add-to-cart-interaction\cd-icon-select.svg" />
+    <Content Include="img\add-to-cart-interaction\cd-icons-cart-close.svg" />
+    <Content Include="img\add-to-cart-interaction\product-preview.png" />
     <Content Include="img\back-to-top\cd-top-arrow.svg" />
     <Content Include="img\content-filter\cd-icon-arrow.svg" />
     <Content Include="img\content-filter\cd-icon-check.svg" />
@@ -131,6 +136,8 @@
     <Content Include="img\product-quick-view\item-2.jpg" />
     <Content Include="img\product-quick-view\item-3.jpg" />
     <Content Include="index.html" />
+    <Content Include="js\add-to-cart-interaction\jquery-3.0.0.min.js" />
+    <Content Include="js\add-to-cart-interaction\main.js" />
     <Content Include="js\angular-endless-scroll-master\.gitignore" />
     <Content Include="js\angular-endless-scroll-master\dist\angular-endless-scroll.js" />
     <Content Include="js\angular-endless-scroll-master\dist\angular-endless-scroll.min.js" />
@@ -171,10 +178,14 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FakeProductsList.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Products\MeasUnitEntity.cs" />
+    <Compile Include="Models\Products\ProductEntity.cs" />
+    <Compile Include="Models\Products\ProductTypeEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +214,11 @@
     <Content Include="js\angular-endless-scroll-master\LICENSE" />
     <Content Include="js\angular-endless-scroll-master\package.json" />
     <Content Include="js\angular-endless-scroll-master\README.md" />
+    <Content Include="js\add-to-cart-interaction\.DS_Store" />
+    <Content Include="partials\add-to-cart-interaction\_layout.scss" />
+    <Content Include="partials\add-to-cart-interaction\_mixins.scss" />
+    <Content Include="partials\add-to-cart-interaction\_variables.scss" />
+    <Content Include="scss\add-to-cart-interaction\style.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -212,7 +228,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
