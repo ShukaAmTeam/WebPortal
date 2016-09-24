@@ -5,7 +5,7 @@ jQuery(document).ready(function($){
 
 	if( cartWrapper.length > 0 ) {
 		//store jQuery objects
-		var cartBody = cartWrapper.find('.body')
+	    var cartBody = cartWrapper.find('.body');
 		var cartList = cartBody.find('ul').eq(0);
 		var cartTotal = cartWrapper.find('.checkout').find('span');
 		var cartTrigger = cartWrapper.children('.cd-cart-trigger');
