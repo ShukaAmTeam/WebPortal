@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-    @*<link href="~/css/bootstrap.min.css" rel="stylesheet" />*@
-    @*<link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />*@
-    @*<link href="~/css/angular-chart.min.css" rel="stylesheet" />*@
-
-    <link rel="stylesheet" href="~/css/reset.css" /> <!-- CSS reset -->
-    <link rel="stylesheet" href="~/css/style.css" /> <!-- Resource style -->
-
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.js"></script>
-    <script src="~/js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/ui-bootstrap-tpls-1.1.2.min.js"></script>
@@ -32,12 +27,43 @@
     <script src="~/SPA/Controller/ProductController.js"></script>
     <script src="~/SPA/App.js"></script>
 
-    <title>Content Filters | CodyHouse</title>
+    <link rel="stylesheet" href="~/css/reset.css"> <!-- Resource style -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        if (!window.jQuery) document.write('<script src="js/add-to-cart-interaction/jquery-3.0.0.min.js"><\/script>');
+    </script>
+    
+    <link rel="stylesheet" href="~/css/style-product-quick-view.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="~/css/style-content-filter.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="~/css/style-back-to-top.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="~/css/style-add-to-cart-interaction.css"> <!-- Resource style -->
+
+    @*<script src="~/js/content-filter/jquery-2.1.1.js"></script> <!-- jquery-2.1.1 -->*@
+    <script src="~/js/content-filter/jquery.mixitup.min.js"></script> <!-- jquery.mixitup.min -->
+    <script src="~/js/content-filter/main.js"></script> <!-- Main -->
+    <script src="~/js/content-filter/modernizr.js"></script> <!-- Modernizr -->
+
+    @*<script src="~/js/product-quick-view/jquery-2.1.1.js"></script>*@ <!-- jquery-2.1.1 -->
+    <script src="~/js/product-quick-view/main.js"></script> <!-- Main -->
+    <script src="~/js/product-quick-view/modernizr.js"></script> <!-- Modernizr -->
+    <script src="~/js/product-quick-view/velocity.min.js"></script> <!-- velocity.min.js -->
+
+    <script src="~/js/back-to-top/main.js"></script> <!-- Main -->
+    <script src="~/js/back-to-top/modernizr.js"></script> <!-- Modernizr -->
+    
+    <script src="~/js/add-to-cart-interaction/main.js"></script> <!-- Resource jQuery -->
+    
+    <script type="text/javascript" src="~/js/angular-endless-scroll-master/dist/angular-endless-scroll.min.js"></script>
+
+    <title>Content Filters, Product Quick View | CodyHouse</title>
 </head>
 <body ng-app="App">
-    <header class="cd-header">
-        <h1>Content Filters</h1>
+
+    <header>
+        <p>header</p>
     </header>
+
     <main class="cd-main-content">
         <div class="cd-tab-filter-wrapper" ng-controller="CdFiltersController">
             <div class="cd-tab-filter">
@@ -46,47 +72,53 @@
                         <a data-type={{selectedFilter.dataType}} href="#0">{{selectedFilter.filter}}</a> <!-- selected option on mobile -->
                     </li>
                     <li class="filter" ng-repeat="x in models.filters" ng-click="changeFilter(x)" data-filter={{x.dataFilter}}>
-                        <a href="#0" data-type={{x.dataType}}>{{x.filter}}</a> 
+                        <a href="#0" data-type={{x.dataType}}>{{x.filter}}</a>
                         <!-- !!!!!!!!! Add class="selected" for first itom !!!!!!!!!!  -->
                     </li>
                 </ul> <!-- cd-filters -->
-                @*<ul class="cd-filters">
-                        <li class="placeholder">
-                            <a data-type="all" href="#0">All</a> <!-- selected option on mobile -->
-                        </li>
-                        <li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
-                        <li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1">Color 1</a></li>
-                        <li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2">Color 2</a></li>
-                    </ul> <!-- cd-filters -->*@
             </div> <!-- cd-tab-filter -->
         </div> <!-- cd-tab-filter-wrapper -->
-        <section class="cd-gallery" ng-controller="ProductController">
-            <ul>
-                <li ng-repeat="x in models.products" ng-cloak class="mix color-1 check1 radio2 option3">
-                    <img src="~/img/img-1.jpg" alt="Image 1" />
-                    @*<p>{{x.Name}}</p>
-                        <p ng-bind="x.Description"></p>*@
 
+        <section class="cd-gallery" ng-controller="ProductController">
+            @*<ul class="cd-items cd-container">*@
+            <ul class="cd-items cd-container">
+                <li ng-repeat="x in models.products" ng-cloak
+                    class="cd-item mix color-1 {{x.ProductTypes.DataFilter}} radio2 option3">
+                    <input type="hidden" value="{{x.Id}}" />
+                    <img src="{{x.ImageUrls[0]}}" alt="Image 1" title="{{x.Name}}" />
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                    @*<p>{{x.Name}}</p>
+                        <p>{{x.Description}}</p>*@
                 </li>
-                @*<li class="mix color-1 check1 radio2 option3"><img src="~/img/img-1.jpg" alt="Image 1"></li>
-                    <li class="mix color-2 check2 radio2 option2"><img src="~/img/img-2.jpg" alt="Image 2"></li>
-                    <li class="mix color-1 check3 radio3 option1"><img src="~/img/img-3.jpg" alt="Image 3"></li>
-                    <li class="mix color-1 check3 radio2 option4"><img src="~/img/img-4.jpg" alt="Image 4"></li>
-                    <li class="mix color-1 check1 radio3 option2"><img src="~/img/img-5.jpg" alt="Image 5"></li>
-                    <li class="mix color-2 check2 radio3 option3"><img src="~/img/img-6.jpg" alt="Image 6"></li>
-                    <li class="mix color-2 check2 radio2 option1"><img src="~/img/img-7.jpg" alt="Image 7"></li>
-                    <li class="mix color-1 check1 radio3 option4"><img src="~/img/img-8.jpg" alt="Image 8"></li>
-                    <li class="mix color-2 check1 radio2 option3"><img src="~/img/img-9.jpg" alt="Image 9"></li>
-                    <li class="mix color-1 check3 radio2 option4"><img src="~/img/img-10.jpg" alt="Image 10"></li>
-                    <li class="mix color-1 check3 radio3 option2"><img src="~/img/img-11.jpg" alt="Image 11"></li>
-                    <li class="mix color-2 check1 radio3 option1"><img src="~/img/img-12.jpg" alt="Image 12"></li>*@
-                <li class="gap"></li>
                 <li class="gap"></li>
                 <li class="gap" ng-init="loopLoaded()"></li>
-
             </ul>
             <div class="cd-fail-message">No results found</div>
         </section> <!-- cd-gallery -->
+
+        <div class="cd-quick-view">
+            <div class="cd-slider-wrapper">
+                <ul class="cd-slider">
+                    <li class="selected"><img src="~/img/product-quick-view/item-1.jpg" alt="Product 1"></li>
+                </ul> <!-- cd-slider -->
+                <ul class="cd-slider-navigation">
+                    <li><a class="cd-next" href="#0">Prev</a></li>
+                    <li><a class="cd-prev" href="#0">Next</a></li>
+                </ul> <!-- cd-slider-navigation -->
+            </div> <!-- cd-slider-wrapper -->
+            <div class="cd-item-info">
+                <h2 class="title">Produt Title</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, omnis illo iste ratione. Numquam eveniet quo, ullam itaque expedita impedit. Eveniet, asperiores amet iste repellendus similique reiciendis, maxime laborum praesentium.</p>
+                <ul class="cd-item-action">
+                    @*<li><button class="add-to-cart">Add to cart</button></li>*@
+                    <li><a href="#0" class="cd-add-to-cart add-to-cart" data-product-id="-1" data-price="25.99">Add To Cart</a></li>
+
+                    <li><a href="#0">Learn more</a></li>
+                </ul> <!-- cd-item-action -->
+            </div> <!-- cd-item-info -->
+            <a href="#0" class="cd-quick-view-close">Close</a>
+        </div> <!-- cd-quick-view -->
+
         <div class="cd-filter">
             <form>
                 <div class="cd-filter-block">
@@ -95,54 +127,51 @@
                         <input type="search" placeholder="Try color-1...">
                     </div> <!-- cd-filter-content -->
                 </div> <!-- cd-filter-block -->
+
                 <div class="cd-filter-block" ng-controller="ChBFiltersController">
-                    <h4>Check boxes</h4>
+                    <h4>Filter by product type</h4>
                     <ul class="cd-filter-content cd-filters list">
                         <li ng-repeat="x in models.filters" ng-click="changeFilter(x)">
-                            <input class="filter" data-filter={{x.dataFilter}} type="checkbox" id="checkbox{{x.id}}">
-                            <label class="checkbox-label" for="checkbox{{x.id}}">{{x.filter}}</label>
-                        </li>
-                    </ul> <!-- cd-filter-content -->
-                </div> <!-- cd-filter-block -->
-                <div class="cd-filter-block">
-                    <h4>Select</h4>
-                    <div class="cd-filter-content">
-                        <div class="cd-select cd-filters">
-                            <select class="filter" name="selectThis" id="selectThis">
-                                <option value="">Choose an option</option>
-                                <option value=".option1">Option 1</option>
-                                <option value=".option2">Option 2</option>
-                                <option value=".option3">Option 3</option>
-                                <option value=".option4">Option 4</option>
-                            </select>
-                        </div> <!-- cd-select -->
-                    </div> <!-- cd-filter-content -->
-                </div> <!-- cd-filter-block -->
-                <div class="cd-filter-block">
-                    <h4>Radio buttons</h4>
-                    <ul class="cd-filter-content cd-filters list">
-                        <li>
-                            <input class="filter" data-filter="" type="radio" name="radioButton" id="radio1" checked>
-                            <label class="radio-label" for="radio1">All</label>
-                        </li>
-                        <li>
-                            <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id="radio2">
-                            <label class="radio-label" for="radio2">Choice 2</label>
-                        </li>
-                        <li>
-                            <input class="filter" data-filter=".radio3" type="radio" name="radioButton" id="radio3">
-                            <label class="radio-label" for="radio3">Choice 3</label>
+                            <input class="filter" data-filter=.{{x.DataFilter}} type="checkbox" id="checkbox{{x.Id}}">
+                            <label class="checkbox-label" for="checkbox{{x.Id}}">{{x.Name}}</label>
                         </li>
                     </ul> <!-- cd-filter-content -->
                 </div> <!-- cd-filter-block -->
             </form>
             <a href="#0" class="cd-close">Close</a>
         </div> <!-- cd-filter -->
-        <a href="#0" class="cd-filter-trigger">Filters</a>
-    </main> <!-- cd-main-content -->
 
-    <script src="~/js/jquery-2.1.1.js"></script>
-    <script src="~/js/jquery.mixitup.min.js"></script>
-    <script src="~/js/main.js"></script> <!-- Resource jQuery -->
+        <a href="#0" class="cd-filter-trigger">Filters</a>
+
+        <a href="#0" class="cd-top">Top</a>
+
+        <div class="cd-cart-container empty"> 
+            <a href="#0" class="cd-cart-trigger">
+                Cart
+                <ul class="count">
+                    <!-- cart items count -->
+                    <li>0</li>
+                    <li>0</li>
+                </ul> <!-- .count -->
+            </a>
+            <div class="cd-cart">
+                <div class="wrapper">
+                    <header>
+                        <h2>Cart</h2>
+                        <span class="undo">Item removed. <a href="#0">Undo</a></span>
+                    </header>
+
+                    <div class="body">
+                        <ul>
+                            <!-- products added to the cart will be inserted here using JavaScript -->
+                        </ul>
+                    </div>
+                    <footer>
+                        <a href="#0" class="checkout btn"><em>Checkout - $<span>0</span></em></a>
+                    </footer>
+                </div>
+            </div> <!-- .cd-cart -->
+        </div> <!-- cd-cart-container -->
+    </main> <!-- cd-main-content -->
 </body>
 </html>

@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -106,28 +107,55 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\reset.css" />
-    <Content Include="css\style.css" />
+    <Content Include="css\style-add-to-cart-interaction.css" />
+    <Content Include="css\style-back-to-top.css" />
+    <Content Include="css\style-content-filter.css" />
+    <Content Include="css\style-product-quick-view.css" />
     <Content Include="Global.asax" />
-    <Content Include="img\cd-icon-arrow.svg" />
-    <Content Include="img\cd-icon-check.svg" />
-    <Content Include="img\cd-icon-filter.svg" />
-    <Content Include="img\img-1.jpg" />
-    <Content Include="img\img-10.jpg" />
-    <Content Include="img\img-11.jpg" />
-    <Content Include="img\img-12.jpg" />
-    <Content Include="img\img-2.jpg" />
-    <Content Include="img\img-3.jpg" />
-    <Content Include="img\img-4.jpg" />
-    <Content Include="img\img-5.jpg" />
-    <Content Include="img\img-6.jpg" />
-    <Content Include="img\img-7.jpg" />
-    <Content Include="img\img-8.jpg" />
-    <Content Include="img\img-9.jpg" />
+    <Content Include="img\add-to-cart-interaction\cd-icon-arrow-next.svg" />
+    <Content Include="img\add-to-cart-interaction\cd-icon-select.svg" />
+    <Content Include="img\add-to-cart-interaction\cd-icons-cart-close.svg" />
+    <Content Include="img\add-to-cart-interaction\product-preview.png" />
+    <Content Include="img\back-to-top\cd-top-arrow.svg" />
+    <Content Include="img\content-filter\cd-icon-arrow.svg" />
+    <Content Include="img\content-filter\cd-icon-check.svg" />
+    <Content Include="img\content-filter\cd-icon-filter.svg" />
+    <Content Include="img\content-filter\img-1.jpg" />
+    <Content Include="img\content-filter\img-10.jpg" />
+    <Content Include="img\content-filter\img-11.jpg" />
+    <Content Include="img\content-filter\img-12.jpg" />
+    <Content Include="img\content-filter\img-2.jpg" />
+    <Content Include="img\content-filter\img-3.jpg" />
+    <Content Include="img\content-filter\img-4.jpg" />
+    <Content Include="img\content-filter\img-5.jpg" />
+    <Content Include="img\content-filter\img-6.jpg" />
+    <Content Include="img\content-filter\img-7.jpg" />
+    <Content Include="img\content-filter\img-8.jpg" />
+    <Content Include="img\content-filter\img-9.jpg" />
+    <Content Include="img\product-quick-view\item-1.jpg" />
+    <Content Include="img\product-quick-view\item-2.jpg" />
+    <Content Include="img\product-quick-view\item-3.jpg" />
     <Content Include="index.html" />
-    <Content Include="js\jquery-2.1.1.js" />
-    <Content Include="js\jquery.mixitup.min.js" />
-    <Content Include="js\main.js" />
-    <Content Include="js\modernizr.js" />
+    <Content Include="js\add-to-cart-interaction\jquery-3.0.0.min.js" />
+    <Content Include="js\add-to-cart-interaction\main.js" />
+    <Content Include="js\angular-endless-scroll-master\.gitignore" />
+    <Content Include="js\angular-endless-scroll-master\dist\angular-endless-scroll.js" />
+    <Content Include="js\angular-endless-scroll-master\dist\angular-endless-scroll.min.js" />
+    <Content Include="js\angular-endless-scroll-master\Gruntfile.js" />
+    <Content Include="js\angular-endless-scroll-master\karma.conf.js" />
+    <Content Include="js\angular-endless-scroll-master\src\directive.js" />
+    <Content Include="js\angular-endless-scroll-master\src\module.js" />
+    <Content Include="js\angular-endless-scroll-master\test\directive.js" />
+    <Content Include="js\back-to-top\main.js" />
+    <Content Include="js\back-to-top\modernizr.js" />
+    <Content Include="js\content-filter\jquery-2.1.1.js" />
+    <Content Include="js\content-filter\jquery.mixitup.min.js" />
+    <Content Include="js\content-filter\main.js" />
+    <Content Include="js\content-filter\modernizr.js" />
+    <Content Include="js\product-quick-view\jquery-2.1.1.js" />
+    <Content Include="js\product-quick-view\main.js" />
+    <Content Include="js\product-quick-view\modernizr.js" />
+    <Content Include="js\product-quick-view\velocity.min.js" />
     <Content Include="Scripts\angular-chart.min.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Chart.min.js" />
@@ -136,10 +164,12 @@
     <Content Include="SPA\Controller\CdFiltersController.js" />
     <Content Include="SPA\Controller\CdGalleryController.js" />
     <Content Include="SPA\Controller\ChBFiltersController.js" />
+    <Content Include="SPA\Controller\EndlessScrollController.js" />
     <Content Include="SPA\Controller\GridController.js" />
     <Content Include="SPA\Controller\MainController.js" />
     <Content Include="SPA\Controller\ProductController.js" />
     <Content Include="SPA\Controller\ViewProductController.js" />
+    <Content Include="SPA\Views\c2fb5re7.bmp" />
     <Content Include="SPA\Views\Grid.html" />
     <Content Include="SPA\Views\ViewProductWindow.html" />
     <Content Include="Web.config" />
@@ -147,21 +177,49 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FakeProductsList.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Products\MeasUnitEntity.cs" />
+    <Compile Include="Models\Products\ProductEntity.cs" />
+    <Compile Include="Models\Products\ProductTypeEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="js\.DS_Store" />
-    <Content Include="js\mixitup-LICENSE.md" />
-    <Content Include="scss\style.scss" />
     <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="js\content-filter\.DS_Store" />
+    <Content Include="js\content-filter\mixitup-LICENSE.md" />
+    <Content Include="js\product-quick-view\velocity-LICENSE.md" />
+    <Content Include="partials\content-filter\_layout.scss" />
+    <Content Include="partials\content-filter\_mixins.scss" />
+    <Content Include="partials\content-filter\_variables.scss" />
+    <Content Include="partials\product-quick-view\_layout.scss" />
+    <Content Include="partials\product-quick-view\_mixins.scss" />
+    <Content Include="partials\product-quick-view\_variables.scss" />
+    <Content Include="scss\content-filter\style.scss" />
+    <Content Include="scss\product-quick-view\style.scss" />
+    <Content Include="js\back-to-top\.DS_Store" />
+    <Content Include="partials\back-to-top\_layout.scss" />
+    <Content Include="partials\back-to-top\_mixins.scss" />
+    <Content Include="partials\back-to-top\_variables.scss" />
+    <Content Include="scss\back-to-top\style.scss" />
+    <Content Include="js\angular-endless-scroll-master\.jshintrc" />
+    <Content Include="js\angular-endless-scroll-master\bower.json" />
+    <Content Include="js\angular-endless-scroll-master\LICENSE" />
+    <Content Include="js\angular-endless-scroll-master\package.json" />
+    <Content Include="js\angular-endless-scroll-master\README.md" />
+    <Content Include="js\add-to-cart-interaction\.DS_Store" />
+    <Content Include="partials\add-to-cart-interaction\_layout.scss" />
+    <Content Include="partials\add-to-cart-interaction\_mixins.scss" />
+    <Content Include="partials\add-to-cart-interaction\_variables.scss" />
+    <Content Include="scss\add-to-cart-interaction\style.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,7 +229,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
