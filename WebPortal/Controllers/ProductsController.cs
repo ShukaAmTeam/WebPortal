@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Linq;
 using System.Web.Http;
 
 namespace WebPortal.Controllers
